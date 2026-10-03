@@ -1,3 +1,5 @@
 /zip/
 /assets.zip
 /SHA256SUMS-windows-x64.txt
+/__MACOSX/
+*.DS_Store
