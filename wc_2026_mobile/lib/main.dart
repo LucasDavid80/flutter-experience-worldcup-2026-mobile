@@ -1,4 +1,5 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:wc_2026_mobile/ui/splash/splash_screen.dart';
 
 import 'ui/core/theme/app_theme.dart';
 
@@ -12,7 +13,7 @@ class const MainApp({super.key}) extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme.light,
       title: 'World Cup 2026',
-      home: Scaffold(body: Center(child: Text('Hello World'))),
+      home: SplashScreen(),
     );
   }
 }
