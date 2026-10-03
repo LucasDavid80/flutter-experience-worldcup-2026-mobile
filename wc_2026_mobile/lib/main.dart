@@ -1,20 +1,20 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:wc_2026_mobile/ui/splash/splash_screen.dart';
-import 'package:wc_2026_mobile/ui/welcome/welcome_screen.dart';
-
-import 'ui/core/theme/app_theme.dart';
+import 'package:wc_2026_mobile/routing/router.dart';
+import 'package:wc_2026_mobile/ui/core/theme/theme.dart';
 
 void main() {
-  runApp(MainApp());
+  runApp(const MainApp());
 }
 
 class const MainApp({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       theme: AppTheme.light,
-      title: 'World Cup 2026',
-      home: WelcomeScreen(),
+      builder: (context, child) {
+        return MaterialUiCompatibilityBridge(child: child!);
+      },
+      routerConfig: router(),
     );
   }
 }
