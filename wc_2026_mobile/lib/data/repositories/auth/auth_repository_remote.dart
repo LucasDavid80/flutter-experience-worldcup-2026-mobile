@@ -3,6 +3,8 @@ import 'package:wc_2026_mobile/core/exceptions/app_exception.dart';
 import 'package:wc_2026_mobile/core/result.dart';
 import 'package:wc_2026_mobile/data/repositories/auth/auth_repository.dart';
 import 'package:wc_2026_mobile/data/services/api/auth_api.dart';
+import 'package:wc_2026_mobile/data/services/api/mappers/auth_session_api_model_mapper.dart';
+import 'package:wc_2026_mobile/data/services/api/mappers/dio_exception_mapper.dart';
 import 'package:wc_2026_mobile/data/services/api/model/login/login_request.dart';
 import 'package:wc_2026_mobile/domain/models/auth_session.dart';
 
@@ -25,6 +27,7 @@ class AuthRepositoryRemote({required final AuthApi _authApi})
           InvalidCredentialsException(cause: e, stackTrace: st),
         );
       }
+      return Result.error(e.toAppException(st));
     }
   }
 }
