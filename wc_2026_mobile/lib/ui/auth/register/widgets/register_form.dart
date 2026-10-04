@@ -6,7 +6,7 @@ import 'package:wc_2026_mobile/ui/core/theme/theme.dart';
 
 class const RegisterForm({
   super.key,
-  required final VoidCallback onSubmit,
+  required final VoidCallback? onSubmit,
   required final Widget teamPicker,
   required final bool acceptedTerms,
   required final ValueChanged<bool> onAcceptedTermChanged,
@@ -47,7 +47,7 @@ class const RegisterForm({
           const SizedBox(height: 20),
           LabeledField(
             label: 'Nome Completo',
-            hint: 'Lucas David',
+            hint: 'Rodrigo Rahman',
             controller: nameController,
             textCapitalization: .words,
             textInputAction: .next,
